@@ -12,7 +12,7 @@ pip install django-response-mid
 # 3 返回结果样式查看2自定义状态码 
 # MIDDLEWARE = [
 #     ...
-#     'django_response_middleware.ResponseMiddleware',
+#     'django_response_middleware.django_response_middleware.ResponseMiddleware',
 #     ...
 # ]
 ```
@@ -21,9 +21,11 @@ pip install django-response-mid
 # 2 自定义状态码
 ## 使用方法
 ```python
-# 1 如果需要自定义的状态码和message 将response_codes.py文件复制出去
+# 1 如果需要自定义的状态码和message 将response_codes.json文件复制出去放到你自己的目录
 # 2 在settings.py 定义变量RESPONSE_CODE
-# 3 RESPONSE_CODE = '你复制出去response_codes.py的文件的位置'
+# 3 with open(BASE_DIR + r'你自己的目录\response_codes.json', 'r', encoding='utf-8') as f:
+#    RESPONSE_CODE = json.loads(f.read())
+
 # 4 以下导包三选一 具体参数到response_data查看
 # 5 前端检测我们自定义的code即可
 

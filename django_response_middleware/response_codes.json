@@ -1,0 +1,210 @@
+{
+  "200": {
+    "code": "200",
+    "message": "ok"
+  },
+  "400": {
+    "code": "400",
+    "message": "0"
+  },
+  "401.1": {
+    "code": "401.1",
+    "message": "\u672a\u7ecf\u6388\u6743\uff1a1"
+  },
+  "401.2": {
+    "code": "401.2",
+    "message": "\u672a\u7ecf\u6388\u6743: 2"
+  },
+  "401.3": {
+    "code": "401.3",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a3"
+  },
+  "401.4": {
+    "code": "401.4",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a4"
+  },
+  "401.5": {
+    "code": "401.5",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a5"
+  },
+  "401.7": {
+    "code": "401.7",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a6"
+  },
+  "403": {
+    "code": "403",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a7"
+  },
+  "403.1": {
+    "code": "403.1",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a8"
+  },
+  "403.2": {
+    "code": "403.2",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a9"
+  },
+  "403.3": {
+    "code": "403.3",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a10"
+  },
+  "403.4": {
+    "code": "403.4",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a11"
+  },
+  "403.5": {
+    "code": "403.5",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a12"
+  },
+  "403.6": {
+    "code": "403.6",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a13"
+  },
+  "403.7": {
+    "code": "403.7",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a14"
+  },
+  "403.8": {
+    "code": "403.8",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a15"
+  },
+  "403.9": {
+    "code": "403.9",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a16"
+  },
+  "403.10": {
+    "code": "403.10",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a17"
+  },
+  "403.11": {
+    "code": "403.11",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a18"
+  },
+  "403.12": {
+    "code": "403.12",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a19"
+  },
+  "403.13": {
+    "code": "403.13",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a20"
+  },
+  "403.14": {
+    "code": "403.14",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a21"
+  },
+  "403.15": {
+    "code": "403.15",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a22"
+  },
+  "403.16": {
+    "code": "403.16",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a23"
+  },
+  "403.17": {
+    "code": "403.17",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a24"
+  },
+  "403.18": {
+    "code": "403.18",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a25"
+  },
+  "403.19": {
+    "code": "403.19",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a26"
+  },
+  "403.20": {
+    "code": "403.20",
+    "message": "\u7981\u6b62\u8bbf\u95ee\uff1a27"
+  },
+  "404": {
+    "code": "404",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "404.1": {
+    "code": "404.1",
+    "message": "\u6587\u4ef6\u6216\u76ee\u5f55\u672a\u627e\u5230\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "404.2": {
+    "code": "404.2",
+    "message": "\u6587\u4ef6\u6216\u76ee\u5f55\u65e0\u6cd5\u627e\u5230\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "404.3": {
+    "code": "404.3",
+    "message": "\u6587\u4ef6\u6216\u76ee\u5f55\u65e0\u6cd5\u627e\u5230\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "405": {
+    "code": "405",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "406": {
+    "code": "406",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "407": {
+    "code": "407",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "410": {
+    "code": "410",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "412": {
+    "code": "412",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "414": {
+    "code": "414",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "500": {
+    "code": "500",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "500.11": {
+    "code": "500.11",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.12": {
+    "code": "500.12",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.13": {
+    "code": "500.13",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.14": {
+    "code": "500.14",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.15": {
+    "code": "500.15",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.16": {
+    "code": "500.16",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.17": {
+    "code": "500.17",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.18": {
+    "code": "500.18",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.19": {
+    "code": "500.19",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "500.20": {
+    "code": "500.20",
+    "message": "\u670d\u52a1\u5668\u9519\u8bef\uff1a\u81ea\u5b9a\u4e49"
+  },
+  "501": {
+    "code": "501",
+    "message": "\u81ea\u5b9a\u4e49"
+  },
+  "502": {
+    "code": "502",
+    "message": "\u81ea\u5b9a\u4e49"
+  }
+}
