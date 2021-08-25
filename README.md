@@ -23,7 +23,7 @@ pip install django-response-mid
 ```python
 # 1 如果需要自定义的状态码和message 将response_codes.json文件复制出去放到你自己的目录
 # 2 在settings.py 定义变量RESPONSE_CODE
-# 3 with open(BASE_DIR + r'你自己的目录\response_codes.json', 'r', encoding='utf-8') as f:
+# 3 with open(BASE_DIR + r'你自己的目录/response_codes.json', 'r', encoding='utf-8') as f:
 #    RESPONSE_CODE = json.loads(f.read())
 
 # 4 以下导包三选一 具体参数到response_data查看
