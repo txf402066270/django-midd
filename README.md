@@ -87,6 +87,16 @@ class CaseStudyView(ResponseApiView):
     # }
 ```
 
+### 新增
+```python
+def customize_code_message(self, code, message, data=None):
+    """自定义code和message, 不用我默认提供的code和message
+        返回的结果样式同上
+    """
+    pass
+
+```
+
 
 ### 3 备注
 因为django自己的返回结果和我们代码写的结构有时候不一样，

@@ -68,6 +68,14 @@ class BaseResponse(object):
             ret = {'code': code, 'message': message, 'datas': data}
             return Response(ret)
 
+    def customize_code_message(self, code, message, data=None):
+        """自定义code和message, 不用我默认提供的code和message
+            返回的结果样式同上述方法
+        """
+        if not data:
+            data = []
+        return Response({'code': code, 'message': message, 'datas': data})
+
 
 class ResponseApiView(BaseResponse, APIView):
     """配合扩展的父类"""
