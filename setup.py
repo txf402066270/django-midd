@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='django-response-mid',
-      version='1.02',
+      version='1.04',
       description='django response middleware',
       classifiers=[
           'Programming Language :: Python',

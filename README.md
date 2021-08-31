@@ -12,22 +12,31 @@ pip install django-response-mid
 # 3 返回结果样式查看2自定义状态码 
 # MIDDLEWARE = [
 #     ...
+#     自定义状态码 以及返回结果格式化
 #     'django_response_middleware.django_response_middleware.ResponseMiddleware',
-#     ...
-# ]
+#     内部报错对外展示的结果
+#     'django_response_middleware.django_response_middleware.CustomizeExceptionMiddleware',
+#     ...]
+#   
 ```
 
 
 # 2 自定义状态码
 ## 使用方法
 ```python
-# 1 如果需要自定义的状态码和message 将response_codes.json文件复制出去放到你自己的目录
-# 2 在settings.py 定义变量RESPONSE_CODE
-# 3 with open(BASE_DIR + r'你自己的目录/response_codes.json', 'r', encoding='utf-8') as f:
-#    RESPONSE_CODE = json.loads(f.read())
 
-# 4 以下导包三选一 具体参数到response_data查看
-# 5 前端检测我们自定义的code即可
+# ============如果需要自定义的状态码和message============
+# 方法1 
+# 将response_codes.json文件复制出去
+# 在settings.py 定义变量RESPONSE_CODE
+# RESPONSE_CODE = '你复制出去response_codes.py的文件的位置'
+
+# 方法2
+# 直接使用自定义函数
+# customize_code_message
+
+# 以下导包三选一 具体参数到response_data查看
+# 前端检测我们自定义的code即可
 
 from django_response_middleware.response_data import BaseResponse
 from django_response_middleware.response_data import ResponseApiView
@@ -87,7 +96,7 @@ class CaseStudyView(ResponseApiView):
     # }
 ```
 
-### 新增
+### response_data.py 新增
 ```python
 def customize_code_message(self, code, message, data=None):
     """自定义code和message, 不用我默认提供的code和message
@@ -96,6 +105,22 @@ def customize_code_message(self, code, message, data=None):
     pass
 
 ```
+
+### django_response_middleware.py 新增
+```python
+class CustomizeExceptionMiddleware(MyBaseMiddleware):
+    """服务器异常不对外爆露，使用自定义"""
+
+    def process_exception(self, request, exception):
+
+        logger.error({'process_exception捕获异常': exception})
+
+        return HttpResponse(
+            json.dumps({'code': '06537',
+                        'message': 'error',
+                        'datas': {'info': '请联系无敌后台哥哥(姐姐)解决!!'}
+                        }),
+            content_type="application/json")
 
 
 ### 3 备注

@@ -1,5 +1,11 @@
-class ResponseMiddleware(object):
-    """自定义返回结果"""
+import logging
+import json
+from django.http.response import HttpResponse
+
+logger = logging.getLogger(__name__)
+
+
+class MyBaseMiddleware(object):
 
     def __init__(self, get_response):
         self.get_response = get_response
@@ -8,9 +14,13 @@ class ResponseMiddleware(object):
         response = self.get_response(request)
         return response
 
-    def process_template_response(self, request, response):
-        if hasattr(response, 'data'):
 
+class ResponseMiddleware(MyBaseMiddleware):
+    """自定义返回结果"""
+
+    def process_template_response(self, request, response):
+
+        if hasattr(response, 'data'):
             if response.status_code == 200:
                 if 'datas' not in response.data and 'code' not in response.data:
                     data = response.data
@@ -34,3 +44,18 @@ class ResponseMiddleware(object):
                 }
 
         return response
+
+
+class CustomizeExceptionMiddleware(MyBaseMiddleware):
+    """服务器异常不对外爆露，使用自定义"""
+
+    def process_exception(self, request, exception):
+
+        logger.error({'process_exception捕获异常': exception})
+
+        return HttpResponse(
+            json.dumps({'code': '06537',
+                        'message': 'error',
+                        'datas': {'info': '请联系无敌后台哥哥(姐姐)解决!!'}
+                        }),
+            content_type="application/json")
