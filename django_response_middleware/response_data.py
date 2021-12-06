@@ -1,10 +1,15 @@
+import json
 
+from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView
 
+from .utils.type_conversion import query_list_to_list
+
 try:
     from django.conf import settings
+
     response_code = settings.RESPONSE_CODE
 except:
     from .response_codes import response_code
@@ -37,6 +42,10 @@ class BaseResponse(object):
         """
         正确返回的结果
 
+        序列化后的结果 order_dict 转为python的类型
+        data = query_list_to_list(data)
+
+
         ======== 示例 data有值 ========
         {
             "code": "200",
@@ -56,6 +65,8 @@ class BaseResponse(object):
         }
         """
 
+        data = query_list_to_list(data)
+
         if response_code['200'].get('datas'):
             del response_code['200']['datas']
 
@@ -66,7 +77,7 @@ class BaseResponse(object):
             return Response(ret)
         else:
             ret = {'code': code, 'message': message, 'datas': data}
-            return Response(ret)
+            return HttpResponse(json.dumps(ret), content_type="application/json,charset=utf-8")
 
     def customize_code_message(self, code, message, data=None):
         """自定义code和message, 不用我默认提供的code和message
