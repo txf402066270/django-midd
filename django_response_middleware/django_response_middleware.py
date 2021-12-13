@@ -80,7 +80,7 @@ class CustomizeExceptionMiddleware(MyBaseMiddleware):
 
         return HttpResponse(
             json.dumps({'code': '06537',
-                        'message': 'error',
-                        'datas': [{'error_info': '请联系无敌后台哥哥(姐姐)解决!!'}]
+                        'message': 'server_error',
+                        'datas': {"error_info": {'error_info': '请联系无敌后台哥哥(姐姐)解决!!'}}
                         }),
             content_type="application/json")
