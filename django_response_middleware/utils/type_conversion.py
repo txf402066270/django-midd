@@ -21,3 +21,13 @@ def query_list_to_list(query_list):
             return [dict(i) for i in query_list]
         except:
             return [i for i in query_list]
+
+
+def list_str(error_list):
+    error_list_ = []
+    for ii in error_list:
+        for k, v in ii.items():
+            v = '\n'.join(v)
+            error_list_.append({k: v})
+    return error_list_
+

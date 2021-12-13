@@ -26,7 +26,7 @@ class BaseResponse(object):
             "code": "403.2",
             "message": "禁止访问：请求参数错误！！！",
             "datas": [
-                "禁止访问：请求参数错误！！！"
+                {"error_desc": "禁止访问：请求参数错误！！！"}
             ]
         }
         """
@@ -34,7 +34,7 @@ class BaseResponse(object):
             code = '403.2'
         code = response_code[code]['code']
         message = response_code[code]['message']
-        ret = {'code': code, 'message': message, "datas": [message]}
+        ret = {'code': code, 'message': message, "datas": [{"error_desc": message}]}
 
         return Response(ret)
 
@@ -51,9 +51,10 @@ class BaseResponse(object):
             "code": "200",
             "message": "ok",
             "datas": {
-                "token": "xx.xxx.xxx",
-                "id": 132544,
-                "username": "测试代码"
+                "user_info": {"token": "xx.xxx.xxx",
+                                "id": 132544,
+                                "username": "测试代码"
+                                }
             }
         }
 
@@ -61,7 +62,7 @@ class BaseResponse(object):
         {
             "code": "200",
             "message": "ok",
-            "datas": []
+            "datas": {}
         }
         """
 
@@ -73,7 +74,7 @@ class BaseResponse(object):
         code = response_code['200']['code']
         message = response_code['200']['message']
         if not data:
-            ret = {'code': code, 'message': message, 'datas': []}
+            ret = {'code': code, 'message': message, 'datas': {}}
             return Response(ret)
         else:
             ret = {'code': code, 'message': message, 'datas': data}
