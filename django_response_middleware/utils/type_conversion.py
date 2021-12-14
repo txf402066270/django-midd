@@ -25,9 +25,10 @@ def query_list_to_list(query_list):
 
 def list_str(error_list):
     error_list_ = []
+    if isinstance(error_list, dict):
+        error_list = [error_list]
     for ii in error_list:
         for k, v in ii.items():
             v = '\n'.join(v)
             error_list_.append({k: v})
     return error_list_
-
