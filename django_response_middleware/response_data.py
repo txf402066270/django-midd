@@ -1,5 +1,6 @@
 import json
 
+from django.core.serializers.json import DjangoJSONEncoder
 from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -78,7 +79,8 @@ class BaseResponse(object):
             return Response(ret)
         else:
             ret = {'code': code, 'message': message, 'datas': data}
-            return HttpResponse(json.dumps(ret), content_type="application/json,charset=utf-8")
+            json_data = json.dumps(ret, cls=DjangoJSONEncoder)
+            return HttpResponse(json_data, content_type="application/json,charset=utf-8")
 
     def customize_code_message(self, code, message, data=None):
         """自定义code和message, 不用我默认提供的code和message
