@@ -80,7 +80,7 @@ class BaseResponse(object):
         else:
             ret = {'code': code, 'message': message, 'datas': data}
             json_data = json.dumps(ret, cls=DjangoJSONEncoder)
-            return HttpResponse(json_data, content_type="application/json,charset=utf-8")
+            return HttpResponse(json_data, content_type="application/json;charset=utf-8")
 
     def customize_code_message(self, code, message, data=None):
         """自定义code和message, 不用我默认提供的code和message
