@@ -29,6 +29,5 @@ def list_str(error_list):
         error_list = [error_list]
     for ii in error_list:
         for k, v in ii.items():
-            v = '\n'.join(v)
             error_list_.append({k: v})
     return error_list_

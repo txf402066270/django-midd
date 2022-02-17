@@ -39,7 +39,10 @@ class BaseResponse(object):
 
         return Response(ret)
 
-    def success_response(self, data=None):
+    def success_response(self, data=None,
+                         code_key='code',
+                         message_key='message',
+                         datas_key='datas'):
         """
         正确返回的结果
 
@@ -75,20 +78,23 @@ class BaseResponse(object):
         code = response_code['200']['code']
         message = response_code['200']['message']
         if not data:
-            ret = {'code': code, 'message': message, 'datas': {}}
+            ret = {code_key: code, message_key: message, datas_key: {}}
             return Response(ret)
         else:
-            ret = {'code': code, 'message': message, 'datas': data}
+            ret = {code_key: code, message_key: message, datas_key: data}
             json_data = json.dumps(ret, cls=DjangoJSONEncoder)
             return HttpResponse(json_data, content_type="application/json;charset=utf-8")
 
-    def customize_code_message(self, code, message, data=None):
+    def customize_code_message(self, code, message, data=None,
+                               code_key='code',
+                               message_key='message',
+                               datas_key='datas'):
         """自定义code和message, 不用我默认提供的code和message
             返回的结果样式同上述方法
         """
         if not data:
             data = []
-        return Response({'code': code, 'message': message, 'datas': data})
+        return Response({code_key: code, message_key: message, datas_key: data})
 
 
 class ResponseApiView(BaseResponse, APIView):
